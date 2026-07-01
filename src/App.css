@@ -1,0 +1,141 @@
+/* Sidebar Container */
+.sidebar-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* Sidebar Links styled below in file */
+
+/* Layout modifications for better visuals */
+.sidebar-col {
+  border-right: 1px solid #dee2e6;
+  background-color: #ffffff;
+  min-height: calc(100vh - 56px); /* subtracts height of navbar */
+}
+
+/* Overall page background for high-quality dashboard feel */
+body {
+  background-color: #f4f7f6;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Bootstrap Table enhancements */
+.table-container {
+  background-color: #ffffff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  padding: 15px;
+}
+
+.table th {
+  background-color: #659287 !important;
+  color: white !important;
+  font-weight: 600;
+  border: none;
+  padding: 12px 16px;
+}
+
+.table td {
+  padding: 12px 16px;
+  vertical-align: middle;
+}
+
+/* Dashboard Cards styles */
+.stat-card {
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  color: white;
+}
+
+.stat-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+/* Custom backgrounds for cards using exact requested colors */
+.bg-users {
+  background-color: #BE1A1A !important;
+}
+
+.bg-products {
+  background-color: #FF9E20 !important;
+  color: #212529 !important; /* dark text for contrast on yellow background */
+}
+
+.bg-orders {
+  background-color: #215E61 !important;
+}
+
+/* Simplified Sidebar Styling */
+.sidebar-link {
+  font-weight: 500;
+  color: #495057 !important;
+  text-decoration: none;
+  border-left: 4px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.sidebar-link:hover {
+  color: #215E61 !important;
+  background-color: #f1f3f5;
+}
+
+/* Active state for sidebar - simple, no block background, text colored, simple border-left */
+.sidebar-link.active-sidebar-link {
+  color: #215E61 !important; /* Theme color */
+  font-weight: 700;
+  border-left: 4px solid #215E61 !important;
+  background-color: #e2ebe9 !important;
+  box-shadow: none !important;
+}
+
+.sidebar-link.active-sidebar-link:hover {
+  background-color: #d5e3e0 !important;
+}
+
+/* Mobile Sidebar Responsiveness */
+@media (max-width: 767.98px) {
+  .sidebar-col {
+    position: fixed;
+    top: 56px; /* navbar height */
+    left: 0;
+    width: 250px;
+    height: calc(100vh - 56px);
+    z-index: 1040;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+    box-shadow: 4px 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+  }
+  
+  .sidebar-col.show {
+    transform: translateX(0);
+  }
+
+  .navbar-brand {
+    margin-left: 35px !important;
+  }
+}
+
+/* Sidebar Backdrop Overlay on Mobile */
+.sidebar-overlay {
+  position: fixed;
+  top: 56px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 1030;
+}
+
+/* Floating Sidebar Toggle Button inside navbar area */
+.sidebar-toggle-btn {
+  position: fixed;
+  top: 16px;
+  left: 15px;
+  z-index: 1100;
+}
